@@ -10,6 +10,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Game Dev PVG</title>
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://kit.fontawesome.com/90915ad547.js" crossOrigin="anonymous"></script>
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
