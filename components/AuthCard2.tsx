@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import GradientButton from './GradientButton'
 
 interface Props {
@@ -12,6 +12,7 @@ const AuthCard2 = ({ type }: Props) => {
     const [eyeSlash, setEyeSlash] = useState(true)
     const [showEye, setShowEye] = useState(false)
     const [mouseOnEye, setMouseOnEye] = useState(false)
+    const ref = useRef<any>();
     const router = useRouter();
 
     const handleRedirect = () => {
@@ -24,6 +25,7 @@ const AuthCard2 = ({ type }: Props) => {
 
     const eyeClickHandler = () => {
         console.log("wtf")
+        ref.current.focus()
         setEyeSlash(!eyeSlash)
     }
 
@@ -35,6 +37,7 @@ const AuthCard2 = ({ type }: Props) => {
         <div className='absolute flex md:flex-row flex-col max-w-[100%] overflow-clip p-[1rem]'>
             <div className='space-y-6 mt-8' >
                 <input
+                    autoComplete='off'
                     className='w-[90%] md:w-[60%] bg-transparent outline-none outline text-white focus:border-b-[1px]'
                     type="email"
                     name='email'
@@ -42,6 +45,7 @@ const AuthCard2 = ({ type }: Props) => {
                 <input
                     onFocus={()=>setShowEye(true)}
                     onBlur={pwNotFocusHandler}
+                    ref={ref}
                     className='w-[80%] md:w-[60%] bg-transparent outline-none outline text-white focus:border-b-[1px]'
                     type={eyeSlash ? 'password' : 'text'}
                     name='password'
