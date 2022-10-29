@@ -121,7 +121,9 @@ const games = [
     // PAGE - 10
     51325, //the-last-of-us-part-2
     10061, //watch_dogs-2
-    
+    865, //call-of-duty-black-ops
+    58751, //halo-infinite
+    58777, //doom-eternal
 ]
 
 export default games
