@@ -20,7 +20,7 @@ const Home: NextPage = (backdropGame) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Backdrop game={backdropGame}/>
+        <Backdrop />
       
 
      <Footer />
@@ -30,19 +30,20 @@ const Home: NextPage = (backdropGame) => {
 
 export default Home
 
-export const getServerSideProps = async () => { 
-  const [
-    backdropGame
-  ] = await Promise.all([
-    fetch(requests.fetchBackdropGame).then((res)=>res.json())
-  ])
+// export const getStaticProps = async () => { 
+//   const [
+//     backdropGame
+//   ] = await Promise.all([
+//     fetch(requests.fetchBackdropGame).then((res)=>res.json())
+//   ])
 
 
 
 
-  return {
-    props: {
-      backdropGame: backdropGame
-    }
-  }
-}
+//   return {
+//     props: {
+//       backdropGame: backdropGame
+//     },
+//     revalidate: 2
+//   }
+// }
