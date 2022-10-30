@@ -3,14 +3,15 @@ import requests from '../../constants/request'
 import { IGame } from '../../constants/typings'
 
 interface Props {
-    backdropGame : IGame
+    arrBackdropGameImage : string
 }
 
-const Backdrop = ({backdropGame} : Props) =>  {
+const Backdrop = ({arrBackdropGameImage} : Props) =>  {
   
+    const randomUrl = arrBackdropGameImage[Math.floor(Math.random()*arrBackdropGameImage.length)]
     return (
         <div>
-            <img src={backdropGame.background_image} alt="" />
+            <img src={randomUrl} alt="" />
         </div>
     )
 }

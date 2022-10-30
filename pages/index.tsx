@@ -10,12 +10,10 @@ import requests from '../constants/request';
 import { IGame } from '../constants/typings';
 
 interface props {
-  backdropGame : IGame
+  arrBackdropGameImage : string
 }
 
-const Home = ({backdropGame} : props) => {
-
-// console.log(backdropGame)
+const Home = ({arrBackdropGameImage} : props) => {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -25,7 +23,7 @@ const Home = ({backdropGame} : props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Backdrop backdropGame={backdropGame}/>
+        <Backdrop arrBackdropGameImage={arrBackdropGameImage}/>
       
 
      <Footer />
@@ -37,6 +35,7 @@ export default Home
 
 export const getStaticProps = async () => { 
   var fetchUrls: string[] = []
+  var arrBackdropGameImage: string[] = []
   games.map((gameId)=> 
   fetchUrls.push('https://api.rawg.io/api/games/' + gameId + '?key=c583d6c4e2034b78b6a269b83bfee968')
   )
@@ -50,13 +49,15 @@ export const getStaticProps = async () => {
     })
   )
 
-  var randomBackdrop = backdropGames[Math.floor(Math.random()*backdropGames.length)]
+  // var randomBackdrop = backdropGames[Math.floor(Math.random()*backdropGames.length)]
 
-
+backdropGames.map(game => {
+  arrBackdropGameImage.push(game.background_image)
+})
 
   return {
     props: {
-      backdropGame: randomBackdrop,
+      arrBackdropGameImage: arrBackdropGameImage,
     },
   }
 }
