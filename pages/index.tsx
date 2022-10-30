@@ -7,9 +7,13 @@ import Header from '../components/Header'
 import Backdrop from '../components/home/Backdrop';
 import games from '../constants/games';
 import requests from '../constants/request';
+import { IGame } from '../constants/typings';
 
+interface props {
+  backdropGame : IGame
+}
 
-const Home: NextPage = (backdropGame) => {
+const Home = ({backdropGame} : props) => {
 
 // console.log(backdropGame)
 
@@ -21,7 +25,7 @@ const Home: NextPage = (backdropGame) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Backdrop backdropGame={backdropGame.backdropGame}/>
+        <Backdrop backdropGame={backdropGame}/>
       
 
      <Footer />
@@ -53,7 +57,6 @@ export const getStaticProps = async () => {
   return {
     props: {
       backdropGame: randomBackdrop,
-
     },
   }
 }
