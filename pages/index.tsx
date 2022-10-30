@@ -33,7 +33,7 @@ const Home = ({arrBackdropGameImage} : props) => {
 
 export default Home
 
-export const getStaticProps = async () => { 
+export const getServerSideProps = async () => { 
   var fetchUrls: string[] = []
   var arrBackdropGameImage: string[] = []
   games.map((gameId)=> 
