@@ -1,18 +1,10 @@
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import games from '../../constants/games'
-import useSWR from 'swr'
 import requests from '../../constants/request'
+import { movie } from '../../constants/typings'
 
-interface Props {
-    game : any
-    url : any
-}
-
-const fetcher = (url : any) => fetch(url).then(res => res.json())
 
 const Backdrop = () =>  {
-    const [data, setData] = useState<any>(null)
+    const [data, setData] = useState<movie | null>(null)
     const [isLoading, setLoading] = useState(false)
   
     useEffect(() => {
@@ -27,9 +19,11 @@ const Backdrop = () =>  {
   
     return (
         <div>
-            {isLoading ? <h1>LOADING</h1> : (data? 
-            <img src={data.background_image} alt="" />
-            : <h1>NODATA</h1>)}
+            {isLoading ? 
+                <h1>LOADING</h1> 
+                : (data? 
+                    <img src={data.background_image} alt="" />
+                    : <h1>NODATA</h1>)}
         </div>
     )
 }
