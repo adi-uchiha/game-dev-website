@@ -1,25 +1,24 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import games from '../../constants/games'
+import { ImageUrls } from '../../constants/imageUrls'
 import requests from '../../constants/request'
 import { IGame } from '../../constants/typings'
 
-interface Props {
-    arrBackdropGameImage : any
-}
 
-const Backdrop = ({arrBackdropGameImage} : Props) =>  {
-    console.log(arrBackdropGameImage)  
-    const randomUrl = arrBackdropGameImage[Math.floor(Math.random()*arrBackdropGameImage.length)]
+
+const Backdrop = () =>  {
+    
+    const randomUrl = ImageUrls[Math.floor(Math.random()*ImageUrls.length)]
 
     return (
         <div>
-            {arrBackdropGameImage[0].error ? 
-            <h1>ERROR IN BACKDROP</h1> :
-            <Image src={randomUrl} alt="" layout='fill'/>
-        }
+            {randomUrl ? 
+            <img src={randomUrl} alt=""/>:
+            <h1>Loading</h1>
+            }
         </div>
 
-        // <Image src={randomUrl} alt="" layout='fill'/>
     )
 }
 

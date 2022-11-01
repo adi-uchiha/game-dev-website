@@ -10,10 +10,11 @@ import requests from '../constants/request';
 import { IGame } from '../constants/typings';
 
 interface props {
-  arrBackdropGameImage : []
+  arrBackdropGameImage: any
 }
 
-const Home = ({arrBackdropGameImage} : props) => {
+const Home = () => {
+
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -23,7 +24,7 @@ const Home = ({arrBackdropGameImage} : props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Backdrop arrBackdropGameImage={arrBackdropGameImage}/>
+        <Backdrop />
       
 
      <Footer />
@@ -33,38 +34,39 @@ const Home = ({arrBackdropGameImage} : props) => {
 
 export default Home
 
-export const getServerSideProps = async () => { 
-  var fetchUrls: string[] = []
-  var arrBackdropGameImage: string[] = []
-  games.map((gameId)=> 
-  fetchUrls.push('https://api.rawg.io/api/games/' + gameId + '?key=39a9df233d1c429b8755dbdad8ffb271')
-  )
 
-  const backdropGames:any = await Promise.all(
-    fetchUrls.map(async url => {
-      try{
-        var results = await fetch(url)
-        .then(res=>res.json())
-        // console.log(results)
-        return results
-      }catch(err){
-        console.log(err)
-      }
-    })
-  )
+// export const getServerSideProps = async () => { 
+//   var fetchUrls: string[] = []
+//   var arrBackdropGameImage: string[] = []
+//   games.map((gameId)=> 
+//   fetchUrls.push('https://api.rawg.io/api/games/' + gameId + '?key=39a9df233d1c429b8755dbdad8ffb271')
+//   )
 
-  if(backdropGames[0].error){
-    arrBackdropGameImage = backdropGames
-  }else{
-    console.log("no error")
-    backdropGames.map((game: IGame) => {
-    arrBackdropGameImage.push(game.background_image)
-    })
-  }
+//   const backdropGames:any = await Promise.all(
+//     fetchUrls.map(async url => {
+//       try{
+//         var results = await fetch(url)
+//         .then(res=>res.json())
+//         // console.log(results)
+//         return results
+//       }catch(err){
+//         console.log(err)
+//       }
+//     })
+//   )
 
-  return {
-    props: {
-      arrBackdropGameImage: arrBackdropGameImage
-    },
-  }
-}
+//   if(backdropGames[0].error){
+//     arrBackdropGameImage = backdropGames
+//   }else{
+//     console.log("no error")
+//     backdropGames.map((game: IGame) => {
+//     arrBackdropGameImage.push(game.background_image)
+//     })
+//   }
+
+//   return {
+//     props: {
+//       arrBackdropGameImage: arrBackdropGameImage
+//     },
+//   }
+// }
