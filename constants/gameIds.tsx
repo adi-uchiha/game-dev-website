@@ -5,9 +5,7 @@ interface gamesIds {
 
 
 const gameIds = [
-    865,
-    // csgo 
-    // battlefield 5
+    865,// csgo // battlefield 5
     3498, //grand-theft-auto-v
     3328, //the-witcher-3-wild-hunt
     4200, //portal-2

@@ -22,7 +22,6 @@ const AuthCard = ({ type }: Props) => {
     }
 
     const eyeClickHandler = (e : React.MouseEvent<HTMLElement, MouseEvent>) => {
-        console.log("wtf")
         pwRef.current.focus()
         setEyeSlash(!eyeSlash)
     }

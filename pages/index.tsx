@@ -7,7 +7,7 @@ import Header from '../components/Header'
 import Backdrop from '../components/home/Backdrop';
 import games from '../constants/gameIds';
 import requests from '../constants/request';
-import { IGame } from '../constants/typings';
+import HomeWrap from "../components/home/HomeWrap";
 
 interface props {
   arrBackdropGameImage: any
@@ -24,7 +24,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <Backdrop />
+        <HomeWrap />
       
 
      <Footer />
