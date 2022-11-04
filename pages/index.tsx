@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Backdrop from '../components/home/Backdrop';
-import games from '../constants/games';
+import games from '../constants/gameIds';
 import requests from '../constants/request';
 import { IGame } from '../constants/typings';
 

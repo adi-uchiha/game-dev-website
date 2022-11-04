@@ -1,11 +1,5 @@
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import games from '../../constants/games'
+import React from 'react'
 import { ImageUrls } from '../../constants/imageUrls'
-import requests from '../../constants/request'
-import { IGame } from '../../constants/typings'
-
-
 
 const Backdrop = () =>  {
     
@@ -14,7 +8,7 @@ const Backdrop = () =>  {
     return (
         <div>
             {randomUrl ? 
-            <img src={randomUrl} alt=""/>:
+            <img loading='lazy' src={randomUrl} alt=""/>:
             <h1>Loading</h1>
             }
         </div>

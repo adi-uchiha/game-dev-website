@@ -1,10 +1,10 @@
-interface games {
+interface gamesIds {
     games: [number]
 }
 
 
 
-const games = [
+const gameIds = [
     865,
     // csgo 
     // battlefield 5
@@ -126,4 +126,4 @@ const games = [
     58777, //doom-eternal
 ]
 
-export default games
+export default gameIds
