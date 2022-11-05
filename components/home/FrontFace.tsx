@@ -1,18 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import gameIds from '../../constants/gameIds'
 import { IGame } from '../../constants/typings'
 
 interface props{
-    randomId: number
+    random: number
 }
 
-const FrontFace = ({randomId}: props) => {
+const FrontFace = ({random}: props) => {
   const [data, setData] = useState<IGame | null >(null)
-    const fetchUrl = 'https://api.rawg.io/api/games/'+ gameIds[randomId] + '?key=39a9df233d1c429b8755dbdad8ffb271'
-    fetch(fetchUrl)
+    useEffect(() => {
+      const fetchUrl = 'https://api.rawg.io/api/games/'+ gameIds[random] + '?key=24830fa09591422cb72de71bda55fe29'
+    fetch(fetchUrl, {mode: 'cors'})
     .then(res=>res.json())
     .then(result=>setData(result))
     .catch(err=>console.log(err))
+    
+      return () => {
+        
+      }
+    }, [random])
+    
   
   return (
     <div>

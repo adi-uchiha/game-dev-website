@@ -1,14 +1,18 @@
 import React from 'react'
 import gameIds from '../../constants/gameIds'
+import { ImageUrls } from '../../constants/imageUrls'
 import Backdrop from './Backdrop'
 import FrontFace from './FrontFace'
 
 const HomeWrap = () => {
-  const randomId = Math.floor(Math.random()*gameIds.length)
+  const random = Math.floor(Math.random()*gameIds.length)
+  console.log("random:"+ random)
+  console.log('gameId'+ gameIds[random])
+  console.log('gameURL'+ ImageUrls[random])
   return (
     <div>
-        <Backdrop randomId={randomId}/>
-        <FrontFace randomId={randomId}/>
+        <Backdrop random={random}/>
+        <FrontFace random={random}/>
     </div>
   )
 }

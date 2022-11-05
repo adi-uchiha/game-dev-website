@@ -2,12 +2,12 @@ import React from 'react'
 import { ImageUrls } from '../../constants/imageUrls'
 
 interface props{
-    randomId : number
+    random : number
 }
 
-const Backdrop = ({randomId} : props) =>  {
+const Backdrop = ({random} : props) =>  {
     
-    const randomUrl = ImageUrls[randomId]
+    const randomUrl = ImageUrls[random]
 
     return (
         <div>
