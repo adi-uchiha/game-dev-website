@@ -11,8 +11,8 @@ const HomeWrap = () => {
   console.log('gameURL'+ ImageUrls[random])
   return (
     <div>
-        <Backdrop random={random}/>
-        <FrontFace random={random}/>
+        <Backdrop random={15}/>
+        <FrontFace random={15}/>
     </div>
   )
 }
