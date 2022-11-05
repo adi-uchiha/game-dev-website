@@ -11,22 +11,23 @@ const Backdrop = ({ random }: props) => {
     const randomUrl = ImageUrls[random]
 
     const backdropImage = 
-    <div className='bg-red-500' >
-    <div className='backdropImage w-[100vw] h-[100vh] ml-[8%] mt-[5vh] overflow-visible'
+    <div className='bg-transparent w-[98.7vw] -z-20' >
+    <div className='backdropImage w-full h-[100vh] pl-[8%] pt-[8vh]'
     >
         <Image
-            className='overflow-scroll h-[100vh]'
+            className='-z-10'
             src={randomUrl} alt=""
             priority
-            width='1700px'
+            width='1900px'
             height='1000px'
-            layout="responsive" objectFit="cover"
+            layout="responsive" 
+            objectFit="cover"
             />
             </div>
     </div>
 
     return (
-        <div>
+        <div className=''>
             {randomUrl ?
                  backdropImage  :
                 <h1>Loading</h1>
