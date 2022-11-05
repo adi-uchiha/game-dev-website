@@ -12,7 +12,7 @@ const Backdrop = ({randomId} : props) =>  {
     return (
         <div>
             {randomUrl ? 
-            <img loading='lazy' src={randomUrl} alt=""/>:
+            <img src={randomUrl} alt=""/>:
             <h1>Loading</h1>
             }
         </div>
