@@ -1,6 +1,5 @@
 import React from 'react'
 import gameIds from '../../constants/gameIds'
-import { ImageUrls } from '../../constants/imageUrls'
 import Backdrop from './Backdrop'
 import FrontFace from './FrontFace'
 
