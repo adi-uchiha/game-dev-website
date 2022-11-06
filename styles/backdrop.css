@@ -1,5 +1,10 @@
 .backdropImage {
     background: rgb(0,0,3);
-    background: linear-gradient(to right, black 40px,20%, rgba(0,0,0,0) 29%, rgba(0,0,0,0)), 
-    linear-gradient(180deg, rgba(0, 0, 3, 0.8) 0%, rgba(0,0,1,0) 10%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, black 40px,24.5%, rgba(0,0,0,0) 28%, rgba(0,0,0,0)), 
+    linear-gradient(180deg, rgba(0, 0, 3, 0.8) 3%, rgba(0,0,1,0) 10%, rgba(255,255,255,0) 100%);
+  }
+  @media only screen and (max-width: 600px){
+    .backdropImage{
+      background: linear-gradient(180deg, rgba(0, 0, 3, 0.8) 3%, rgba(0,0,1,0) 10%, rgba(255,255,255,0) 100%);
+    }
   }

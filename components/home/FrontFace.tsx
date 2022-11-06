@@ -24,7 +24,7 @@ const FrontFace = ({random}: props) => {
   return (
     <div>
         {data ?
-        <p>{data.slug}</p>:
+        <p>{data.reddit_description}</p>:
         <p>LOADING</p>
       }
 
