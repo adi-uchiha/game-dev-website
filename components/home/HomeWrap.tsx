@@ -6,13 +6,10 @@ import FrontFace from './FrontFace'
 
 const HomeWrap = () => {
   const random = Math.floor(Math.random()*gameIds.length)
-  console.log("random:"+ random)
-  console.log('gameId'+ gameIds[random])
-  console.log('gameURL'+ ImageUrls[random])
   return (
     <div>
-        <Backdrop random={16}/>
-        <FrontFace random={16}/>
+        <Backdrop random={random}/>
+        <FrontFace random={random}/>
     </div>
   )
 }
