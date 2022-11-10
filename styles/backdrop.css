@@ -1,10 +1,19 @@
+:root {
+  overflow-x: hidden;
+}
+
 .backdropImage {
-    background: rgb(0,0,3);
-    background: linear-gradient(to right, black 40px,24.5%, rgba(0,0,0,0) 28%, rgba(0,0,0,0)), 
-    linear-gradient(180deg, rgba(0, 0, 3, 0.8) 3%, rgba(0,0,1,0) 10%, rgba(255,255,255,0) 100%);
+  overflow: hidden;
+  background: rgb(0, 0, 3);
+  background: linear-gradient(180deg, rgba(0, 0, 3, 0.8) 3%, rgba(0, 0, 1, 0) 10%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* for tablets */
+@media only screen and (min-width: 1024px) {
+  .backdropImage {
+    overflow: hidden;
+    background: rgb(0, 0, 3);
+    background: linear-gradient(to right, black 100px, 45%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0)),
+      linear-gradient(180deg, rgba(0, 0, 3, 0.8) 3%, rgba(0, 0, 1, 0) 10%, rgba(255, 255, 255, 0) 100%);
   }
-  @media only screen and (max-width: 600px){
-    .backdropImage{
-      background: linear-gradient(180deg, rgba(0, 0, 3, 0.8) 3%, rgba(0,0,1,0) 10%, rgba(255,255,255,0) 100%);
-    }
-  }
+}
